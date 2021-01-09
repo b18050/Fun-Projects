@@ -17,19 +17,19 @@ const ball1 = {
     velocityX : 2,
     velocityY : 0,
     speed : 7,
-    color : "WHITE",
+    color : "PINK",
     direction : -1
 }
 
 // Ball object
 const ball2 = {
-    x : ox + 3*xx,
+    x : ox + 2*xx,
     y : oy,
     radius : 10,
     velocityX : 2,
     velocityY : 0,
     speed : 7,
-    color : "WHITE",
+    color : "YELLOW",
     direction : -1
 }
 
@@ -46,35 +46,35 @@ const ball3 = {
 
 const ball4 = {
     x : ox,
-    y : oy + 2*yy,
-    radius : 10,
-    velocityX : 0,
-    velocityY : 2,
-    speed : 7,
-    color : "WHITE",
-    direction : 1
-}
-
-const ball5 = {
-    x : ox,
     y : oy + yy,
     radius : 10,
     velocityX : 0,
     velocityY : 2,
     speed : 7,
-    color : "WHITE",
-    direction : 1
+    color : "BlUE",
+    direction : -1
 }
 
-const ball6 = {
+const ball5 = {
     x : ox,
-    y : oy + 3*yy,
+    y : oy + 2*yy,
     radius : 10,
     velocityX : 0,
     velocityY : 2,
     speed : 7,
-    color : "WHITE",
+    color : "RED",
     direction : -1
+}
+
+const ball6 = {
+    x : ox,
+    y : oy - 3*yy,
+    radius : 10,
+    velocityX : 0,
+    velocityY : 2,
+    speed : 7,
+    color : "GREEN",
+    direction : 1
 }
 
 
@@ -207,7 +207,7 @@ function update(){
         console.log(score);
     }
 
-    if(collision(ball3,ball4)){
+    if(collision(ball3,ball6)){
         ball3.direction = 0 - ball3.direction;
         ball6.direction = 0 - ball6.direction;
         score = score + 1;
@@ -245,7 +245,7 @@ function render(){
 
    
     // clear the canvas
-    drawRect(0, 0, canvas.width, canvas.height, "#000");
+    drawRect(0, 0, canvas.width, canvas.height, "#004");
     
     // draw the ball
     drawArc(ball1.x, ball1.y, ball1.radius, ball1.color);
